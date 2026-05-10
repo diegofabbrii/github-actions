@@ -13,9 +13,17 @@ import java.util.Map;
 public class ActionsControlller {
 
   @GetMapping
-  public ResponseEntity<Map<String, String>> getBoolean() {
+  public ResponseEntity<Map<String, String>> sendMessage() {
     var response = new HashMap<String, String>();
     response.put("message", "Deu certo");
+
+    return ResponseEntity.ok(response);
+  }
+
+  @GetMapping("send-name")
+  public ResponseEntity<Map<String, String>> sendName() {
+    var response = new HashMap<String, String>();
+    response.put("name", "Diego");
 
     return ResponseEntity.ok(response);
   }
